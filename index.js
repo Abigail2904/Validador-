@@ -1,15 +1,15 @@
-
+//RegEx  Expresiones regulares, patrones de busqueda para cadenas de texto 1
 
 const userRegex = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/;
+const emailRegex = /^\S+@\S+\.\S{3,4}$/;
+const phonenumberRegex = /^[0-9]{6,16}$/; 
 const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,10}$/;
-const emailRegex =  /^\S+@\S+\.\S{3,4}$/;
-const phonenumberRegex = /^[0-9]{6,16}$/;
 
 // Creamos los selectores 2
 const countries = document.querySelector("#countries");
 const usernameInput = document.querySelector("#username");
 const emailInput = document.querySelector("#email");
-const phoneCode = document.querySelector("#phone-code");
+const phoneCode = document.querySelector("#phonecode");
 const phoneInput = document.querySelector("#phone");
 const passwordInput = document.querySelector("#password");
 const confirmPasswordInput = document.querySelector("#confirm-password");
@@ -114,22 +114,4 @@ form.addEventListener("submit", (event) => {
     Username: ${user.username}
     Email: ${user.email}
     Phone: ${user.phone}`);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const select = document.getElementById('countries');
-    const phoneCode = document.getElementById('phone-code');
-
-    // Mostrar el código del país seleccionado al cargar la página
-    if (select.value) {
-        phoneCode.textContent = '+' + select.value;
-    }
-
-    select.addEventListener('change', function() {
-        if (select.value) {
-            phoneCode.textContent = '+' + select.value;
-        } else {
-            phoneCode.textContent = '+#';
-        }
-    });
 });

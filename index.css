@@ -1,24 +1,27 @@
-/* Reset y fuente */
 *,
 ::before,
 ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    border-width: 0;
+    border-style: solid;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Fondo general */
+
 body {
+    margin: 0;
     min-height: 100vh;
-    background: url('img/bg.jpg');
-    background-size: cover;
+    background-size: center;
     background-position: center;
-    background-repeat: no-repeat;
+    animation: moveBackground 5s linear infinite;
+    background: radial-gradient(circle, #a0d911, #ebb89134);
+    
 }
 
-/* Contenedor principal del formulario */
-#form-container {
+
+#formContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,84 +30,70 @@ body {
     min-height: calc(100vh - 3.5rem);
 }
 
-/* Formulario */
 #form {
     margin: 2rem 1rem;
     backdrop-filter: blur(3px);
-    background-color: #9e22838b;
+    background-color: #40692ac5;
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; 
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    box-shadow: 2px 2px 10px 5px rgba(26, 1, 61, 0.797);
-    width: 60%;
+    box-shadow: 2px 2px 10px 5px #0000008b;
+    width: 50%;
 }
 
-/* Título del formulario */
 #formTitle {
     color: white;
     text-align: center;
 }
 
-/* Div de inputs */
-.input-div {
+#formdiv {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0rem;
 }
 
-/* Inputs generales */
-input[type="nombre"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-select {
-    background-color: whitesmoke;
+.formInputs {
+    background-color: rgb(235, 235, 235);
     outline: none;
     border: none;
     border-radius: 0.5rem;
     padding: 1rem;
-    font-size: 1rem;
-    margin-bottom: 0.2rem;
 }
 
-input::placeholder {
+.formInputs::placeholder {
     color: rgba(5, 0, 0, 0.663);
 }
 
-/* Información bajo los campos */
 .information {
-    margin: 0.2rem 0 0.5rem 0;
+    margin: 0.5rem 0 -0.5rem 0;
     color: white;
-    font-size: 0.95rem;
-    /* Si quieres que se oculte por defecto, usa display: none; y muestra con JS */
-    /* display: none; */
+    display: none;
+
 }
 
-/* Para mostrar información con JS */
-.show-information {
-    display: block !important;
+#phoneContainer {
+    margin: 0;
+    display: flex;
+    gap: 1rem;
 }
 
-/* Teléfono */
 #phone {
     width: 100%;
 }
 
-#phone-code {
-    margin-bottom: 0.2rem;
+#phonecode {
+    margin: 0;
     border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     background-color: whitesmoke;
     color: rgba(5, 0, 0, 0.663);
-    font-size: 0.95rem;
-    display: inline-block;
-    width: auto;
+    font-size: 0.85rem;
 }
 
-/* Select */
 select {
+
     height: 40px;
     border-radius: 10px;
     padding: 0 1rem;
@@ -114,7 +103,6 @@ select {
     border: none;
 }
 
-/* Estados de validación */
 .correct {
     outline: 2px solid #22c55e;
 }
@@ -123,7 +111,10 @@ select {
     outline: 2px solid #ef4444;
 }
 
-/* Botón */
+.show-information {
+    display: block;
+}
+
 #form-btn {
     width: 100%;
     background-color: #1b8de4;
@@ -133,7 +124,10 @@ select {
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    border: none;
+    display: flex;
+    justify-content:center;
+      
+
 }
 
 #form-btn:disabled {
@@ -141,16 +135,15 @@ select {
     cursor: not-allowed;
 }
 
-/* Footer */
 footer {
-    background: #4413858b;
+    background: #9fbd54;
     backdrop-filter: blur(3px);
     width: 100%;
     padding: 1rem;
 }
 
 a {
-    color: #5de7ff;
+    color: #ffffff;
     font-weight: 500;
     text-decoration: none;
 }
@@ -160,8 +153,8 @@ a {
     text-align: center;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+
     #form {
         width: 90%;
     }
